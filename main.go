@@ -30,12 +30,15 @@ func main() {
 		panic(err)
 	}
 
-	vault, err := connection.DescribeVault("Example")
+	_, err = connection.DescribeVault("Example")
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(vault)
+	err = connection.DeleteVault("Example")
+	if err != nil {
+		panic(err)
+	}
 
 }
 
